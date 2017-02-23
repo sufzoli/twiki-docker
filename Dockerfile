@@ -1,5 +1,6 @@
-FROM ubuntu:14.04
-MAINTAINER Thomas Berger <th.berger@it.piratenpartei.de>
+FROM ubuntu:16.04
+MAINTAINER Zoltan Gomori <suf@freemail.hu>
+# Based on Thomas Berger <th.berger@it.piratenpartei.de> work
 
 ENV TWIKI_VERSION 6.0.2
 
