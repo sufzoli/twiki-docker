@@ -12,7 +12,7 @@ RUN mkdir -p /var/www && tar xfv TWiki-${TWIKI_VERSION}.tgz -C /var/www && rm TW
 ADD perl/cpanfile /tmp/cpanfile
 ADD http://cpansearch.perl.org/src/THALJEF/Pinto-0.09995/etc/cpanm /tmp/cpanm
 
-RUN chmod +x /tmp/cpanm && /tmp/cpanm -l /var/www/twiki/lib/CPAN --installdeps /tmp/ && rm -rf /.cpanm /tmp/cpanm /tmp/cpanfile /var/www/twiki/lib/CPAN/man
+RUN chmod +x /tmp/cpanm && sync && /tmp/cpanm -l /var/www/twiki/lib/CPAN --installdeps /tmp/ && rm -rf /.cpanm /tmp/cpanm /tmp/cpanfile /var/www/twiki/lib/CPAN/man
 
 ADD configs/vhost.conf /etc/apache2/sites-available/twiki.conf
 ADD configs/LocalLib.cfg  /var/www/twiki/bin/LocalLib.cfg
